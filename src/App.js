@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import Popup from "reactjs-popup";
+import "./App.css";
+import "semantic-ui-css/semantic.min.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
-function App() {
+//route import
+import Sider from './components/views/Sider';
+import Home from './components/views/Home';
+
+
+
+function App () {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Sider />}></Route>
+        <Route path='/home' element={<Home/>}></Route>
+      </Routes>
+    </Router>
   );
 }
-
 export default App;
